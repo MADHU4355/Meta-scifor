@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Uploaded List - Ebook Platform</title>
+</head>
+<body style="background-repeat: no-repeat; background-size: cover;" background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz6GPsJIIfkvgXsMpWgurOnP9wdD7TYzEJ2A&s">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="{% url 'home %'}">Ebook Platform</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'upload_ebook' %}">E-Book</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'upload_poster' %}">Poster</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'uploaded_list' %}">Items</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container text-center" style="margin-top: 50px;">
+        <h1 class="mb-4">Uploaded E-books and Posters</h1>
+        
+        <h2>E-books</h2>
+        <ul class="list-group mb-4">
+            {% if ebooks %}
+                {% for ebook in ebooks %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ ebook.title }} by {{ ebook.author }}
+                        <a href="{% url 'ebook_detail' ebook.id %}" class="btn btn-primary btn-sm">View Details</a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li class="list-group-item">No e-books uploaded yet.</li>
+            {% endif %}
+        </ul>
+
+        <h2>Posters</h2>
+        <ul class="list-group">
+            {% if posters %}
+                {% for poster in posters %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ poster.title }}
+                        <a href="{% url 'poster_detail' poster.id %}" class="btn btn-primary btn-sm">View Details</a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li class="list-group-item">No posters uploaded yet.</li>
+            {% endif %}
+        </ul>
+    </main>
+
+    <footer class="footer bg-light text-center">
+        <p>© 2024 Ebook Platform</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

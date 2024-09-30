@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <title>Download</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">Ebook Platform</a>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>Download Ebooks and Posters</h1>
+        <h2>Ebooks</h2>
+        <ul>
+            {% for ebook in ebooks %}
+                <li><a href="{{ ebook.file.url }}">{{ ebook.title }} by {{ ebook.author }}</a></li>
+            {% endfor %}
+        </ul>
+        <h2>Posters</h2>
+        <ul>
+            {% for poster in posters %}
+                <li><a href="{{ poster.image.url }}">{{ poster.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer class="footer bg-light text-center">
+        <p>© 2024 Ebook Platform</p>
+    </footer>
+</body>
+</html>

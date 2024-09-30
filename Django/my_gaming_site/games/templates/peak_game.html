@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Peak Game</title>
+    <style>
+        #peakGame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Peak Game</h1>
+    <div id="peakGame">Guess the number between 1 and 100!</div>
+    <input type="number" id="userInput" placeholder="Enter your guess">
+    <button id="submitGuess">Submit</button>
+    <div id="feedback"></div>
+    <script>
+        const targetNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        document.getElementById('submitGuess').onclick = function() {
+            const userGuess = Number(document.getElementById('userInput').value);
+            attempts++;
+            if (userGuess === targetNumber) {
+                document.getElementById('feedback').innerText = `Correct! It took you ${attempts} attempts.`;
+            } else if (userGuess < targetNumber) {
+                document.getElementById('feedback').innerText = "Higher!";
+            } else {
+                document.getElementById('feedback').innerText = "Lower!";
+            }
+        };
+    </script>
+</body>
+</html>

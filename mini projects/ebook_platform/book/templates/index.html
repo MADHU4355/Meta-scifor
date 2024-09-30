@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Downloadable eBooks and Posters</title>
+    <style>
+        .downloads { display: none; } /* Initially hide all download sections */
+        .active { display: block; } /* Show only active sections */
+        .filter-buttons { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Downloads</h1>
+    </header>
+    <main>
+        <div class="filter-buttons">
+            <button onclick="showCategory('ebooks')">eBooks</button>
+            <button onclick="showCategory('posters')">Posters</button>
+            <button onclick="showCategory('cards')">Cards</button>
+        </div>
+        
+        <section class="downloads ebooks active">
+            <h2>eBooks</h2>
+            <div class="download-item">
+                <img src="https://www.srilaprabhupada.co.in/images/team/nectar-of-devotion.jpg" alt="eBook 1 Thumbnail">
+                <h3>Nectar of Devotion</h3>
+                <a href="Downloads/Nectar_of_Devotion.pdf" download>Download</a>
+            </div>
+            <div class="download-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTazKcihXoPTrPxnk1Q6yIzURQwTAZV9oqjfA&s" alt="eBook 2 Thumbnail">
+                <h3>Janmashtami Vrata Manual</h3>
+                <a href="Downloads/English-Janmashtami-Vrata-Manual_1.pdf" download>Download</a>
+            </div>
+        </section>
+
+        <section class="downloads posters">
+            <h2>Posters</h2>
+            <div class="download-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbQ102UqhRHbrwF0OARppO5wxEnVvpijgDpw&s" alt="Poster 1 Thumbnail">
+                <h3>Hare Krishna Maha Mantra</h3>
+                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbQ102UqhRHbrwF0OARppO5wxEnVvpijgDpw&s" download>Download Poster 1</a>
+            </div>
+            <div class="download-item">
+                <img src="https://s3.wasabisys.com/thevaisnava-offload/wp-media-folder-thevaisnava-online-magazine/wp-content/uploads/2022/10/chant-and-be-happy-srila-prabhupada-2022-10-25-21-55.jpg" alt="Poster 2 Thumbnail">
+                <h3>Chant and Be Happy</h3>
+                <a href="https://s3.wasabisys.com/thevaisnava-offload/wp-media-folder-thevaisnava-online-magazine/wp-content/uploads/2022/10/chant-and-be-happy-srila-prabhupada-2022-10-25-21-55.jpg" download>Download Poster 2</a>
+            </div>
+        </section>
+
+        <section class="downloads cards">
+            <h2>Cards</h2>
+            <!-- Add your card items here -->
+            <div class="download-item">
+                <img src="https://example.com/card-thumbnail.jpg" alt="Card 1 Thumbnail">
+                <h3>Card Title 1</h3>
+                <a href="Downloads/Card1.pdf" download>Download Card 1</a>
+            </div>
+            <div class="download-item">
+                <img src="https://example.com/card-thumbnail2.jpg" alt="Card 2 Thumbnail">
+                <h3>Card Title 2</h3>
+                <a href="Downloads/Card2.pdf" download>Download Card 2</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+    
+    <script>
+        function showCategory(category) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.downloads');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected category
+            const activeSection = document.querySelector(`.${category}`);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

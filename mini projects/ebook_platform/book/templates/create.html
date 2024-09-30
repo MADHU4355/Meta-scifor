@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebook Details</title>
+</head>
+<body>
+    <h1>{{ ebook.title }}</h1>
+    <p><strong>Author:</strong> {{ ebook.author }}</p>
+    <p><strong>Description:</strong> {{ ebook.description }}</p>
+    <p><strong>Publication Date:</strong> {{ ebook.publication_date }}</p>
+    <img src="{{ ebook.cover_image.url }}" alt="Cover Image">
+    
+    <h2>Poster Details</h2>
+    <img src="{{ poster.poster_image.url }}" alt="Poster Image">
+    <p><strong>Dimensions:</strong> {{ poster.dimensions }}</p>
+</body>
+</html>

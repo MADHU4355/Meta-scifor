@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Videos - YouTube Downloader</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">YouTube Downloader</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'download_video' %}">Downloader</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'fav_video' %}">Favorites</a>
+                    </li>
+    
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Your Favorite Videos</h1>
+
+        {% if favorites %}
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Video Title</th>
+                        <th>Video URL</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for video in favorites %}
+                        <tr>
+                            <td>{{ video.video_title }}</td>
+                            <td><a href="{{ video.video_url }}" target="_blank">{{ video.video_url }}</a></td>
+                            <td>
+                                <a href="{% url 'download_video' %}?url={{ video.video_url }}" class="btn btn-success btn-sm">Download</a>
+                                <form action="{% url 'remove_favorite' video.id %}" method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="text-center">You have no favorite videos yet.</p>
+        {% endif %}
+    </div>
+
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2024 YouTube Downloader</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Dark Green */
+}
+
+a {
+    text-decoration: none;
+    color: #2196F3; /* Blue */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Button Styles */
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+input[type="number"], input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Full width */
+}
+
+/* Game Container Styles */
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+/* Canvas Styles for Snake Game */
+canvas {
+    background: #000; /* Black */
+    border: 2px solid #4CAF50; /* Green Border */
+}
+
+/* Feedback and Score Styles */
+#feedback, #score {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Specific Game Styles */
+#peakGame {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+}

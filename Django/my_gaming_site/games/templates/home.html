@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Gaming Site!</h1>
+    <a href="{% url 'number_guessing' %}">Number Guessing Game</a>
+    <a href="{% url 'tic_tac_toe' %}">Tic Tac Toe</a>
+    <a href="{% url 'game_2048' %}">2048 Game</a>
+    <a href="{% url 'snake_game' %}">Snake Game</a>
+    <a href="{% url 'peak_game' %}">Peak Game</a>
+
+</body>
+</html>

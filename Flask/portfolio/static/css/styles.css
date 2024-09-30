@@ -1,0 +1,80 @@
+/* Custom Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background for a clean look */
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff; /* Bootstrap primary color */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Larger font size for the name */
+}
+
+header p {
+    font-size: 1.2rem; /* Slightly larger font for the tagline */
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+}
+
+main h2 {
+    color: #343a40; /* Dark gray color for headings */
+    margin-bottom: 20px;
+}
+
+/* Project Cards */
+.row > div {
+    background-color: #ffffff; /* White background for project cards */
+    border: 1px solid #dee2e6; /* Light border for separation */
+    border-radius: 0.25rem; /* Rounded corners */
+    padding: 20px;
+    margin: 10px 0;
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.row > div:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40; /* Dark gray background for footer */
+    color: #ffffff; /* White text color */
+}
+
+footer a {
+    color: #ffffff; /* White links */
+}
+
+footer a:hover {
+    color: #007bff; /* Change link color on hover */
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #28a745; /* Custom green color for buttons */
+    border-color: #28a745; /* Match border with button background */
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+    border-color: #1e7e34; /* Darker border on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Adjust font size on smaller screens */
+    }
+
+    header p {
+        font-size: 1rem; /* Adjust tagline size */
+    }
+}

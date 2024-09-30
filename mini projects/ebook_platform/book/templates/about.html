@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <title>About Us</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="{% url 'home %'}">Ebook Platform</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'upload_ebook' %}">E-Book</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'upload_poster' %}">Poster</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'uploaded_list' %}">Items</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>About Us</h1>
+        <img src="https://publishdrive.com/media/posts/334/what-is-an-ebook.png" alt="" width="600" height="500">
+        <p>Welcome to our Ebook and Poster Platform, where you can upload and download a variety of ebooks and posters.</p>
+        <p>Our mission is to provide a user-friendly space for readers and creators alike.</p>
+        <h3>About Us</h3>
+        <p>We are a platform dedicated to connecting readers and creators by offering a space to share and discover eBooks and posters. Our mission is to inspire creativity and learning for everyone, everywhere.</p>
+        <h2>Mission</h2>
+        <p>To provide an accessible platform for sharing and discovering eBooks and posters, fostering creativity and knowledge.</p>
+        <h2>Vission</h2>
+        <p>To be the go-to destination for digital content, inspiring a community of readers and creators worldwide.</p>
+        <h3>Contact Us</h3>
+        <p>We'd love to hear from you! For inquiries, support, or feedback, please reach out to us at 
+            <a href="{% url 'contact' %}">Contact Us</a>.
+            Feel free to customize the email address and add specific social media links if needed!
+        </p>
+    </main>
+    <footer class="footer">
+        <p>© 2024 Ebook Platform</p>
+    </footer>
+    <!--<footer class="footer bg-light text-center">
+        <p>© 2024 Ebook Platform</p>
+    </footer>-->
+</body>
+</html>

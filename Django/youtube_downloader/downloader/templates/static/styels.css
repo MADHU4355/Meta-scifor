@@ -1,0 +1,163 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Body Styles */
+body {
+    background-color: #f8f9fa; /* Light background */
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Container Styles */
+.container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Heading Styles */
+h1, h2 {
+    color: #343a40; /* Dark color for headings */
+}
+
+/* Form Styling */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="url"],
+form input[type="email"],
+form input[type="password"],
+form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+button {
+    background: #007BFF;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Link Styling */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Table Styling (if needed) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+
+
+
+/* Button Styles */
+.btn {
+    border-radius: 25px; /* Rounded buttons */
+}
+
+/* Form Styles */
+.form-control {
+    border-radius: 5px; /* Slightly rounded input fields */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Table Styles */
+.table {
+    margin-top: 20px;
+}
+
+.table th {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+}
+
+.table td {
+    vertical-align: middle; /* Align table cell content */
+}
+
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  }
+
+/* Footer Styles */
+footer {
+    background-color: #f8f9fa;
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    background: #007BFF;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

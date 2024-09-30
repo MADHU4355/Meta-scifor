@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Ebook Platform</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-repeat: no-repeat; background-size: cover;" background="https://media.istockphoto.com/id/828507464/photo/e-book-reader-on-a-stack-of-books-on-rustic-wooden-table-concept.jpg?s=612x612&w=0&k=20&c=2DERYTEvOg9YCAW6OMREQtvnG1B0fqWadkhWInQP8fo=">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="{% url 'home %'}">Ebook Platform</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'upload_ebook' %}">E-Book</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'upload_poster' %}">Poster</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'uploaded_list' %}">Items</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'upload_business_card' %}">Cards</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'index' %}">Index</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container text-center" style="margin-top: 50px;">
+        <h1>Welcome to the Ebook and Poster Platform</h1>
+        <p>Your one-stop solution for uploading and downloading e-books and posters.</p>
+    </main>
+    <div class="container mt-5">
+        <h1 class="text-center">eBooks and Posters</h1>
+    
+        <div class="row">
+            <!-- eBook Item -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://www.srilaprabhupada.co.in/images/team/nectar-of-devotion.jpg" class="card-img-top" alt="eBook Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Nectar_of_Devotion</h5>
+                        <p class="card-text">"The Nectar of Devotion" by Srila Prabhupada is a profound exposition of Srila Rupa Goswami's "Bhakti-rasamrita-sindhu", delving into the eternal nectar of devotional service.</p>
+                        <a href="{% url 'nectar_of_devotion' %}" class="btn btn-primary" view>View Details</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="https://s3.wasabisys.com/thevaisnava-offload/wp-media-folder-thevaisnava-online-magazine/wp-content/uploads/2022/10/chant-and-be-happy-srila-prabhupada-2022-10-25-21-55.jpg" class="card-img-top" alt="Poster">
+                        <div class="card-body">
+                            <h5 class="card-title">Chant and Be Happy</h5>
+                            <p class="card-text">Description of the poster.</p>
+                            <a href="https://s3.wasabisys.com/thevaisnava-offload/wp-media-folder-thevaisnava-online-magazine/wp-content/uploads/2022/10/chant-and-be-happy-srila-prabhupada-2022-10-25-21-55.jpg" class="btn btn-primary" download>Download Poster</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <footer class="footer bg-light text-center">
+            <p>© 2024 Ebook Platform. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

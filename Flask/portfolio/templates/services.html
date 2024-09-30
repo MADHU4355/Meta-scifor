@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Projects - My Portfolio</title>
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-5">
+        <h1>MUDUMEKALA MADHU KIRAN</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/profile">Profile</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/services">Services</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Services I Offer</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Development</h5>
+                        <p class="card-text">I build responsive and modern websites using the latest technologies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">UI/UX Design</h5>
+                        <p class="card-text">I create user-friendly interfaces that provide an optimal user experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Consulting</h5>
+                        <p class="card-text">I offer consulting services to help businesses improve their online presence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+</body>
+</html>
